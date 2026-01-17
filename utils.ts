@@ -29,10 +29,10 @@ export const runTaskAnimation = async (
 	stopMessage: string,
 	callback: () => Promise<void>
 ) => {
-	const nextSpinner = p.spinner();
-	nextSpinner.start(startMessage);
+	const spinner = p.spinner();
+	spinner.start(startMessage);
 	await callback();
-	nextSpinner.stop(stopMessage);
+	spinner.stop(stopMessage);
 };
 
 export const createNextApp = async (
@@ -153,10 +153,10 @@ export const addShadcnUi = async (appPath: string) => {
 export const addPrisma = async (appPath: string) => {
 	await $({
 		cwd: appPath,
-	})`npm install -D prisma`;
+	})`npm install -D prisma@6`;
 	await $({
 		cwd: appPath,
-	})`npm install @prisma/client dotenv`;
+	})`npm install @prisma/client@6 dotenv`;
 
 	cpSync(path.join(templateDir, 'prisma'), path.resolve(appPath), {
 		force: true,

@@ -1,6 +1,6 @@
 {
 	"name": "inikit",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Best way to get started with Javascript project.",
 	"main": "./dist/index.js",
 	"scripts": {
